@@ -7,6 +7,10 @@
     {
       "pattern": "rovarinofficial.com",
       "custom_domain": true
+    },
+    {
+      "pattern": "www.rovarinofficial.com",
+      "custom_domain": true
     }
   ],
   "assets": {
