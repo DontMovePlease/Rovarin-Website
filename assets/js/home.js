@@ -5,9 +5,15 @@ if ('IntersectionObserver' in window) {
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.08});
   document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 }
-const views={maintenance:{src:'/assets/images/desktop-maintenance.png',alt:'Actual Rovarin Windows Maintenance interface',label:'Maintenance on your desktop',width:1100,height:820},desktop:{src:'/assets/images/desktop-dashboard.png',alt:'Actual Rovarin Windows desktop dashboard',label:'The Windows desktop dashboard'},mobile:{src:'/assets/images/phone-dashboard.jpg',alt:'Actual Rovarin dashboard on an iPhone',label:'The same dashboard, on your phone'}};
+const views={
+  desktop:{src:'/assets/images/desktop-dashboard.png',alt:'Actual Rovarin Windows desktop dashboard',label:'The Windows desktop dashboard',width:888,height:668,mobile:false},
+  apps:{src:'/assets/images/desktop-apps.png',alt:'Actual Rovarin Windows desktop Applications manager with Quick Launch and real app icons',label:'Applications and Quick Launch on your desktop',width:1100,height:820,mobile:false},
+  mobile:{src:'/assets/images/phone-dashboard.jpg',alt:'Actual Rovarin live dashboard on an iPhone',label:'The same live dashboard, on your phone',width:471,height:1024,mobile:true},
+  'phone-apps':{src:'/assets/images/phone-apps.jpg',alt:'Actual Rovarin Applications and Quick Launch on an iPhone',label:'Quick Launch and installed apps on your phone',width:503,height:1024,mobile:true},
+  maintenance:{src:'/assets/images/desktop-maintenance.png',alt:'Actual Rovarin Windows Maintenance interface',label:'Maintenance and cleanup tools on your desktop',width:1100,height:820,mobile:false}
+};
 const screen=document.getElementById('showcase-screen'),image=document.getElementById('showcase-image');
-document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{const view=views[button.dataset.view];if(!view)return;document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));screen.classList.toggle('mobile',button.dataset.view==='mobile');image.src=view.src;image.alt=view.alt;image.width=view.width||(button.dataset.view==='mobile'?589:900);image.height=view.height||(button.dataset.view==='mobile'?1280:680);document.getElementById('showcase-label').textContent=view.label;}));
+document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{const view=views[button.dataset.view];if(!view)return;document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));screen.classList.toggle('mobile',Boolean(view.mobile));image.src=view.src;image.alt=view.alt;image.width=view.width;image.height=view.height;document.getElementById('showcase-label').textContent=view.label;}));
 const dialog=document.getElementById('screenshot-dialog'),expand=document.getElementById('expand-shot');
 expand.addEventListener('click',()=>{const full=document.getElementById('full-shot');full.src=image.src;full.alt=image.alt;if(typeof dialog.showModal==='function')dialog.showModal();else window.open(image.src,'_blank','noopener');});
 document.getElementById('close-shot').addEventListener('click',()=>dialog.close());
