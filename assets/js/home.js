@@ -20,3 +20,6 @@ document.getElementById('close-shot').addEventListener('click',()=>dialog.close(
 dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
 dialog.addEventListener('close',()=>expand.focus());
 (()=>{const button=document.querySelector('[data-menu]');const nav=document.querySelector('[data-nav]');if(button&&nav){button.addEventListener('click',()=>{const open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open))});nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');button.setAttribute('aria-expanded','false')}})}})();
+
+// The mobile menu can also be dismissed without selecting a destination.
+document.addEventListener("keydown",event=>{if(event.key!=="Escape")return;const nav=document.querySelector("[data-nav]"),button=document.querySelector("[data-menu]");if(nav?.classList.contains("open")){nav.classList.remove("open");button.setAttribute("aria-expanded","false");button.focus();}});
