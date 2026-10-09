@@ -4,8 +4,8 @@ Rovarin’s separate static marketing website. No app code, backend, telemetry, 
 
 ## Current content
 
-- Homepage: visible 0.3.0 release highlights for Processes, Applications, desktop navigation/resize and PIN Recovery; real Windows desktop and user-supplied phone screenshots, interactive Desktop/Phone/Tools gallery, accessible screenshot dialog, restrained motion and reduced-motion support.
-- `/download/`: official v0.3.0 Experimental Alpha installer, checksum, unsigned-installer guidance and noncommercial license information.
+- Homepage: visible 0.4.0 release highlights for Processes, Applications, desktop navigation/resize and PIN Recovery; real Windows desktop and user-supplied phone screenshots, interactive Desktop/Phone/Tools gallery, accessible screenshot dialog, restrained motion and reduced-motion support.
+- `/download/`: official v0.4.0 Experimental Alpha installer, checksum, unsigned-installer guidance and noncommercial license information.
 - `/security/` and `/faq/`: factual setup, privacy and remote-access information.
 - `assets/images/social-preview.png`: 1200×630 website preview.
 
