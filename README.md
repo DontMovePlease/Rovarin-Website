@@ -4,8 +4,8 @@ Rovarin’s separate static marketing website. No app code, backend, telemetry, 
 
 ## Current content
 
-- Homepage: concise consumer introduction, three everyday benefits, real desktop/phone screenshot gallery, local-versus-remote setup, short FAQs and restrained reveal animations. Release highlights link to the existing v0.4.0 notes.
-- `/download/`: official v0.4.0 Experimental Alpha installer, checksum, unsigned-installer guidance and noncommercial license information.
+- Homepage: concise consumer introduction, three everyday benefits, real desktop/phone screenshot gallery, local-versus-remote setup, short FAQs and restrained reveal animations. Release highlights link to the existing v0.6.2 notes.
+- `/download/`: official v0.6.2 Experimental Alpha installer, checksum, unsigned-installer guidance and noncommercial license information.
 - `/security/` and `/faq/`: factual setup, privacy and remote-access information.
 - `assets/images/social-preview.png`: 1200×630 website preview.
 
